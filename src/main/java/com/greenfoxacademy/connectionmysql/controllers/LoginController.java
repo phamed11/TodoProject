@@ -1,21 +1,21 @@
-//package com.greenfoxacademy.connectionmysql.controllers;
-//
-//
-//import org.springframework.stereotype.Controller;
-//import org.springframework.web.bind.annotation.GetMapping;
-//import org.springframework.web.bind.annotation.PostMapping;
-//
-//@Controller
-//public class LoginController {
-//
-//  @GetMapping(value = {"/", "/login"})
-//  public String login() {
-//    return "login";
-//  }
-//
-//  @PostMapping(value = {"/", "/login"})
-//  public String loginTo() {
-//
-//    return "redirect:/todo/";
-//  }
-//}
+package com.greenfoxacademy.connectionmysql.controllers;
+
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+
+@Controller
+public class LoginController {
+
+  @GetMapping(value = {"/", "/login"})
+  public String login() {
+    return "former_login";
+  }
+
+  @PostMapping(value = {"/", "/login"})
+  public String loginTo() {
+
+    return "redirect:/todo/";
+  }
+}

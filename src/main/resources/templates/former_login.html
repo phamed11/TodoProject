@@ -9,15 +9,22 @@
         body {
             background-color: lightblue;
         }
+
+        #form{
+            margin-top: 300px;
+            width: 300px;
+            padding: 20px;
+        }
+
     </style>
 </head>
 <body>
-<div align="middle" class="container">
-<form action="/login" method="post" class="form-group">
+<div align="center" class="container">
+<form style="background-color: white" id="form" action="/login" method="post" class="form-group">
     <label for="name">USERNAME</label><br>
     <input type="text" name="name" id="name"><br>
     <label for="password">PASSWORD</label><br>
-    <input type="text" name="password" id="password"><br>
+    <input type="text" name="password" id="password"><br><br>
     <input type="submit" class="btn btn-primary">
 
 </form>
