@@ -23,7 +23,6 @@ public class ToDoControllers {
   public String list(Model model, @RequestParam(value = "isActive", required = false) Boolean isActive,
                      @RequestParam(value = "search", required = false) String search) {
       model.addAttribute("todos", toDoServices.startPage(isActive, search));
-    System.out.println("semmi");
     return "todolist";
   }
 
