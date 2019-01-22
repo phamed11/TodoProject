@@ -14,7 +14,7 @@ jobs:
       # documented at https://circleci.com/docs/2.0/circleci-images/
       # - image: circleci/postgres:9.4
 
-    working_directory: ~/Dropbox/Green fox Academy_DB/greenfox/TodoProject
+    working_directory: https://github.com/phamed11/todohero
 
     environment:
       # Customize the JVM maximum heap limit
