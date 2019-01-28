@@ -35,7 +35,7 @@ public class ConnectionmysqlApplication implements CommandLineRunner {
     toDoRepository.save(new ToDo("Learn something about Mysql", false, false));
     toDoRepository.save(new ToDo("Have a large Hamburger", true, true));
     assigneeRepository.save(new Assignee("Peter", "peter@email.com"));
-    assigneeRepository.save(new Assignee("Laci", "laci@email.com"));
+    assigneeRepository.save(new Assignee("Pisti", "laci@email.com"));
     assigneeRepository.save(new Assignee("Imre", "imre@email.com"));
     assigneeRepository.save(new Assignee("Janos", "janos@email.com"));
   }
