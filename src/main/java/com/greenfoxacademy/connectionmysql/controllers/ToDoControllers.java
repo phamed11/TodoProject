@@ -19,7 +19,7 @@ public class ToDoControllers {
     this.toDoServices = toDoServices;
   }
 
-  @GetMapping(value = {"/", "/list"})
+  @GetMapping(value = {"", "/list"})
   public String list(Model model, @RequestParam(value = "isActive", required = false) Boolean isActive,
                      @RequestParam(value = "search", required = false) String search) {
       model.addAttribute("todos", toDoServices.startPage(isActive, search));
