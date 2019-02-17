@@ -9,15 +9,16 @@ services:
                 environment:
                         MYSQL_ROOT_PASSWORD: root
                         MYSQL_PASSWORD: root
+                        MYSQL_USER: root
                         MYSQL_DATABASE: jwt_db
         gradle-container:
                 image: phamed/todorepo:first
                 container_name: todorepo
                 restart: always
                 environment:
-                        DB_URL: jdbc:mysql://docker-mysql/jwt_db
-                        DB_USERNAME: root
-                        DB_PASSWORD: root
+                        DB NAME: jwt_db
+                        SPRING_DATASOURCE_USERNAME: root
+                        SPRING_DATASOURCE_PASSWORD: root
                         APP_PORT: 8080
                 depends_on:
                         - docker-mysql
