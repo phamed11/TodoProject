@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Todos</title>
+    <link href="/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="/webjars/bootstrap/3.3.7-1/css/bootstrap-theme.min.css" rel="stylesheet"/>
+    <style>
+        body {
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body class="container">
+<h1 style="text-transform: uppercase; font-family: 'Courier New'; font-weight: bolder" align="center">Todos for
+    today</h1>
+
+<div>
+    <table style="font-family: 'Courier New'; font-weight: bold" class="table table-hover">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>TITLE</th>
+            <th>URGENT</th>
+            <th>DONE</th>
+            <th>DELETE?</th>
+            <th>EDIT</th>
+            <th>DATE OF CREATION</th>
+        </tr>
+        </thead>
+        <tbody>
+        <div align="center">
+            <a href="/todo/add" class="btn btn-success" role="button" style="font-weight: bolder">Add new
+                todo..</a>
+            <a href="/todo/assignees" class="btn btn-primary" role="button" style="font-weight: bolder">List of
+                Assignees</a>
+        </div>
+
+        <tr th:each="todo : ${todos}">
+            <td th:text="${todo.getId()}"></td>
+            <td th:text="${todo.getTitle()}"></td>
+            <div th:switch="${todo.isUrgent()}">
+                <td th:case="true"><span class="glyphicon glyphicon-ok" style="color: green"></span></td>
+                <td th:case="false"><span class="glyphicon glyphicon-remove" style="color: red"></span></td>
+            </div>
+            <div th:switch="${todo.done()}">
+                <td th:case="true"><span class="glyphicon glyphicon-ok" style="color: green"></span></td>
+                <td th:case="false"><span class="glyphicon glyphicon-remove" style="color: red"></span></td>
+            </div>
+            <td><a th:href="${todo.getId()} + '/delete'" class="btn btn-danger" role="button">delete</a></td>
+            <td><a th:href="${todo.getId()} + '/edit'" class="btn btn-warning" role="button">edit</a></td>
+            <td th:text="${todo.getDate()}"></td>
+        </tr>
+        <br>
+        </tbody>
+    </table>
+    <br><br><br>
+    <div>
+        <form action="/todo/?search=" method="get">
+            <label for="searchbar">Search todos: </label>
+            <input type="text" name="search" placeholder="Search..." id="searchbar"/>
+            <input class="btn btn-success" role="button" type="submit">
+        </form>
+    </div>
+    <br><br><br>
+    <div align="center">
+        <a href="/todo/?isActive=true" class="btn btn-primary" role="button">Active todos!</a>
+        <a href="/todo/?isActive=false" class="btn btn-info" role="button">All todos which are done</a>
+        <a href="/todo/" class="btn btn-success" role="button">All todos</a>
+    </div>
+    <br>
+
+</div>
+
+<script src="webjars/jquery/1.11.1/jquery.min.js"></script>
+<script src="webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
+</body>
+</html>
