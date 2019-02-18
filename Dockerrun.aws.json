@@ -1,7 +1,7 @@
 {
   "AWSEBDockerrunVersion": "1",
   "Image": {
-    "Name": "phamed/todorepo:first"
+    "Name": "phamed/todorepo:latest"
   },
   "Ports": [
     {
