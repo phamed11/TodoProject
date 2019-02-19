@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.*;
 
 
 @Controller
-@RequestMapping("/todo")
 public class ToDoControllers {
 
   private ToDoServices toDoServices;
@@ -35,13 +34,13 @@ public class ToDoControllers {
   public String todoPost(@RequestParam(value = "name") String title,
                          @ModelAttribute(value = "urgent") boolean urgent) {
     toDoServices.saveToDo(new ToDo(title, urgent, false));
-    return "redirect:/todo/";
+    return "redirect:/";
   }
 
   @GetMapping("/{id}/delete")
   public String delete(@PathVariable(value = "id") Long idToDelete) {
     toDoServices.deleteToDoById(idToDelete);
-    return "redirect:/todo/";
+    return "redirect:/";
   }
 
   @GetMapping("/{id}/edit")
@@ -53,6 +52,6 @@ public class ToDoControllers {
   @PostMapping("/{id}/edit")
   public String edit(@ModelAttribute(value = "toDo") ToDo todo) {
     toDoServices.saveToDo(todo);
-    return "redirect:/todo/";
+    return "redirect:/";
   }
 }

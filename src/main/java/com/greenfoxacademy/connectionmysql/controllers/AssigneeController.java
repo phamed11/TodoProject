@@ -9,7 +9,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-@RequestMapping("/todo")
 public class AssigneeController {
 
   private AssigneeServices assigneeServices;
@@ -28,7 +27,7 @@ public class AssigneeController {
   @GetMapping("/assignees/{id}/delete")
   public String deleteAssignee(@PathVariable(value = "id") Long idToDelete) {
     assigneeServices.deleteAssigneeById(idToDelete);
-    return "redirect:/todo/assignees";
+    return "redirect:/assignees";
   }
 
   @GetMapping("/assignees/{id}/edit")
@@ -40,7 +39,7 @@ public class AssigneeController {
   @PostMapping("/assignees/{id}/edit")
   public String editAssignees(@ModelAttribute(value = "assignee") Assignee assignee) {
     assigneeServices.saveAssignee(assignee);
-    return "redirect:/todo/assignees";
+    return "redirect:/assignees";
   }
 
   @GetMapping("/assignees/add")
@@ -52,6 +51,6 @@ public class AssigneeController {
   public String addAssignee(@ModelAttribute(value = "name") String name,
                             @ModelAttribute(value = "email") String email) {
     assigneeServices.saveAssignee(new Assignee(name, email));
-    return "redirect:/todo/assignees";
+    return "redirect:/assignees";
   }
 }

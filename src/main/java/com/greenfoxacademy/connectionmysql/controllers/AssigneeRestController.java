@@ -15,7 +15,7 @@ public class AssigneeRestController {
     this.assigneeServices = assigneeServices;
   }
 
-  @GetMapping("/todo/api/assignees")
+  @GetMapping("/api/assignees")
   public Object listOfAssignees() {
     return assigneeServices.findAllAssignees();
   }
