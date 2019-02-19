@@ -4,7 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.time.ZonedDateTime;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 
 @Entity
@@ -26,7 +27,8 @@ public class ToDo {
     this.title = title;
     this.isUrgent = isUrgent;
     this.done = done;
-    ZonedDateTime now = ZonedDateTime.now();
+    ZoneId zoneId = ZoneId.of("Europe/Budapest");
+    LocalDateTime now = LocalDateTime.now(zoneId);
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy.MMMM dd. HH:mm:ss");
     this.date = now.format(formatter);
   }
