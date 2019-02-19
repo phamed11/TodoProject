@@ -27,7 +27,7 @@ public class ConnectionmysqlApplication implements CommandLineRunner {
 
   @Override
   public void run(String... args) throws Exception {
-    toDoRepository.save(new ToDo("Start the day good", true, true));
+    toDoRepository.save(new ToDo("Start the day very good", true, true));
     toDoRepository.save(new ToDo("Finish H2 workshop1", true, false));
     toDoRepository.save(new ToDo("Finish JPA workshop2", true, true));
     toDoRepository.save(new ToDo("Create a CRUD project", true, false));
@@ -36,7 +36,7 @@ public class ConnectionmysqlApplication implements CommandLineRunner {
     toDoRepository.save(new ToDo("Have a large Hamburger", true, true));
     assigneeRepository.save(new Assignee("Zoltan", "peter@email.com"));
     assigneeRepository.save(new Assignee("Dimike", "laci@email.com"));
-    assigneeRepository.save(new Assignee("Lajos", "imre@email.com"));
+    assigneeRepository.save(new Assignee("Endre", "imre@email.com"));
     assigneeRepository.save(new Assignee("Janos", "janos@email.com"));
   }
 }
