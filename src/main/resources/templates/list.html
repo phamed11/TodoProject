@@ -19,7 +19,7 @@
         <h2 align="center"><a href="/todo/assignees/add" class="btn btn-success" role="button" style="font-weight: bolder">Add new
             Assignee..</a></h2>
         <tr>
-            <th>ID</th>
+            <th>No#</th>
             <th>Name</th>
             <th>Email address</th>
             <th>DELETE?</th>
@@ -27,8 +27,8 @@
         </tr>
         </thead>
         <tbody>
-        <tr th:each="assignee : ${assignees}">
-            <td th:text="${assignee.getId()}"></td>
+        <tr th:each="assignee,iterator : ${assignees}">
+            <td th:text="${iterator.count}"></td>
             <td th:text="${assignee.getName()}"></td>
             <td th:text="${assignee.getEmail()}"></td>
             <td><a th:href="'/todo/assignees/' + ${assignee.getId()} + '/delete'" class="btn btn-danger" role="button">delete</a></td>

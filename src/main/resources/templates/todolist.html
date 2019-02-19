@@ -19,7 +19,7 @@
     <table style="font-family: 'Courier New'; font-weight: bold" class="table table-hover">
         <thead>
         <tr>
-            <th>ID</th>
+            <th>No#</th>
             <th>TITLE</th>
             <th>URGENT</th>
             <th>DONE</th>
@@ -36,8 +36,8 @@
                 Assignees</a>
         </div>
 
-        <tr th:each="todo : ${todos}">
-            <td th:text="${todo.getId()}"></td>
+        <tr th:each="todo,iterator : ${todos}">
+            <td th:text="${iterator.count}"></td>
             <td th:text="${todo.getTitle()}"></td>
             <div th:switch="${todo.isUrgent()}">
                 <td th:case="true"><span class="glyphicon glyphicon-ok" style="color: green"></span></td>
